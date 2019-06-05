@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as mongoose from "mongoose";
-import { Routes } from "./routes/crm.routes";
+import { Routes } from "./routes/crm.route";
 
 class App {
   public app: express.Application;
