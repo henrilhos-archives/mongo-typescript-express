@@ -1,12 +1,12 @@
+import { Request, Response } from "express";
 import * as mongoose from "mongoose";
 import { ContactSchema } from "../models/crm.model";
-import { Request, Response } from "express";
 
 const Contact = mongoose.model("Contact", ContactSchema);
 
 export class ContactController {
   public addNewContact(req: Request, res: Response) {
-    let newContact = new Contact(req.body);
+    const newContact = new Contact(req.body);
 
     newContact.save((err, contact) => {
       if (err) {
@@ -44,7 +44,7 @@ export class ContactController {
           res.send(err);
         }
         res.json(contact);
-      }
+      },
     );
   }
 

@@ -1,14 +1,9 @@
-import { Request, Response } from "express";
 import { ContactController } from "../controllers/crm.controller";
 
-export class Routes {
+export class CrmRoutes {
   public contactController: ContactController = new ContactController();
 
   public routes(app): void {
-    app.route("/").get((req: Request, res: Response) => {
-      res.status(200).send({ message: "GET request successfull!" });
-    });
-
     // Contact
     app
       .route("/contact")
